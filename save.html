@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- google fonts api -->
+        <link href="https://fonts.googleapis.com/css?family=Mandali|Ubuntu|Alata" rel="stylesheet">
+        <!-- ANimate.css for animation -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <!-- page title -->
+        <title>Saving the planet</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="flash-16.png">
+        <!-- my custom css file -->
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <ul class="nav">
+            <!-- logo container -->
+            <p style="margin-left: -10px;" id="logoContainer">
+                <img src="flash-32.png" style="width: 25px; position: absolute;" alt="logo">
+                <a id="logo" href="index.html">EV Charging Calculator</a>
+            </p>
+            <!-- links to other pages -->
+            <li>
+                <a href="calc.html">Calculator</a>
+            </li>
+            <li>
+                <a href="tips.html">EV Charging Tips</a>
+            </li>
+            <li>
+                <a href="save.html">Saving The Planet</a>
+            </li>
+        </ul>
+        
+        <!-- main div for all the page information -->
+        <div class="mainDiv">
+            <div id="saveMainContainer">
+                <!-- image container with animation -->
+                <div class="animate__animated animate__fadeIn" id="saveImgContainer"></div> 
+                <!-- https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dubizzle.com%2Fblog%2Fcars%2Fenvironmental-factors-cause-car-damage%2F&psig=AOvVaw00G5TQ8H6Gv-62CKZsIWv8&ust=1744063813224000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCPjzgpi4xIwDFQAAAAAdAAAAABAE -->
+                <div id="saveTextContainer">
+                    <!-- title with animation -->
+                    <h1 class="textifyTtl">Saving the planet</h1>
+                    <!-- information about how EVs help the planet -->
+                    <p>
+                        Electric vehicles are an important method of transportation as they provide a cleaner and more sustainable alternative to petrol vehicles. Unlike petrol cars, EVs produce zero tailpipe emissions, which significantly reduces the release of greenhouse gases, like CO2. Plus if the EV is charged using renewable energy, such as solar or wind, this lessens the impact on the environment even further.
+                    </p>
+                    <p>
+                        Air pollution, a major problem in urban areas, is another issue addressed by EVs. Conventional vehicles emit harmful pollutants like nitrogen oxides (NOx) and particulate matter (PM), which can harm human health and degrade air quality. EVs eliminate these pollutants entirely, contributing to cleaner air and healthier communities. Moreover, they are significantly quieter than traditional vehicles, reducing noise pollution and creating more peaceful environments.
+                    </p>
+                    <p>
+                        Energy efficiency is another positive about using EVs. Electric motors are more efficient than internal combustion engines, converting a greater percentage of energy into motion. This means EVs consume less energy overall. Additionally, advancements in technology, such as smart charging and vehicle-to-grid (V2G) systems, enable EVs to integrate seamlessly with renewable energy sources, further supporting a sustainable energy ecosystem.
+                    </p>
+                    <p>
+                        The shift to EVs also reduces dependence on finite resources like oil, whose extraction and use can harm ecosystems. While manufacturing EVs does require rare materials such as lithium for batteries, efforts are being made to develop sustainable supply chains and recycling methods. Over time, these innovations aim to minimize the environmental impact of EV production.
+
+                    </p>                    
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <!-- GSAP script for animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- FontFaceObserver script for title animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.3.0/fontfaceobserver.standalone.js"
+        integrity="sha512-AtGkQVw5dVZR8URiScMJF/O46VB5I4JRo+wsLSwCKvtnlCwlWV/59excjg1+hFmuXuQhwYvoADflVbN4fMAKNg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Textify script for animations -->
+        <script src="https://cdn.jsdelivr.net/npm/textify.js@3.0.1/dist/Textify.min.js"></script>
+        <!-- my Textify JS script for animation -->
+        <script src="textify.js"></script>
+    </body>
+</html>

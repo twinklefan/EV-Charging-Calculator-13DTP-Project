@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Mandali|Ubuntu|Alata" rel="stylesheet">
+        <!-- Animate.css for animations -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <!-- page title -->
+        <title>EV Charging Tips</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="flash-16.png">
+        <!-- my css file for custom styling -->
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- Nav bar -->
+        <ul class="nav">
+            <!-- logo container -->
+            <p style="margin-left: -10px;" id="logoContainer">
+                <img src="flash-32.png" style="width: 25px; position: absolute;" alt="logo">
+                <a id="logo" href="index.html">EV Charging Calculator</a>
+            </p>
+            <!-- nav bar links to other pages -->
+            <li>
+                <a href="calc.html">Calculator</a>
+            </li>
+            <li>
+                <a href="tips.html">EV Charging Tips</a>
+            </li>
+            <li>
+                <a href="save.html">Saving The Planet</a>
+            </li>
+        </ul>
+
+        <!-- main content container -->
+        <div class="mainDiv">
+            <div id="tipsMainContainer">
+                <!-- image container with animation -->
+                <div class="animate__animated animate__fadeIn" id="tipsImgContainer"></div>
+                <!-- text content container -->
+                <div id="tipsTextContainer">
+                    <!-- page title -->
+                    <h1 class="textifyTtl">EV Charging Tips</h1>
+                    <!-- intro paragraph -->
+                    <p>It is important to charge your EV correctly, as this can help prolong the life of the battery and improve its performance. Here are some tips to help you charge your EV efficiently:</p>
+                    <!-- list of EV charging tips -->
+                    <ul>
+                        <li>Avoid consistently charging to 100%</li>
+                        <li>Try avoiding draining the battery down to 0%</li>
+                        <li>Slow charging is best, as fast chargers can degrade the battery over time</li>
+                        <li>Having a smooth driving style will help. Sudden acceleration and high power demands can reduce battery lifespan</li>
+                        <li>Drive at moderate speeds on the highway, very high speeds consume more energy quickly</li>
+                        <li>Try to avoid towing or carrying heavier loads which are not necessary,as this increases energy consumption</li>
+                        <li>Keep your tyres inflated to the right pressure. Flat tires creates extra resistance, using more battery power</li>
+                        <li>Keep your EV software up to date. Manufacturers often release updates that can improve battery management and efficiency</li>
+                        <li>Avoid leaving your EV parked for long periods with a full or near-empty battery. Keeping it between 20-80% is ideal for longer-term storage</li>
+                        <li>Use regenerative braking when possible. This helps to recharge the battery while driving. Regenerative braking is when the energy created by braking generates some charge and sends it back to the battery, extending your range</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <!-- GSAP script for smaller animation (eg. images) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- FontFaceObserver script for font loading for the title animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.3.0/fontfaceobserver.standalone.js" integrity="sha512-AtGkQVw5dVZR8URiScMJF/O46VB5I4JRo+wsLSwCKvtnlCwlWV/59excjg1+hFmuXuQhwYvoADflVbN4fMAKNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Textify script for title animation -->
+        <script src="https://cdn.jsdelivr.net/npm/textify.js@3.0.1/dist/Textify.min.js"></script>
+        <!-- My script for custom JavaScript -->
+        <script src="textify.js"></script>    
+    </body>
+</html>

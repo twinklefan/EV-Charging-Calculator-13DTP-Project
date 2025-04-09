@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- google fonts api -->
+        <link href="https://fonts.googleapis.com/css?family=Mandali|Ubuntu|Alata" rel="stylesheet">
+        <!-- page title -->
+        <title>Calculator</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="flash-16.png">
+        <!-- my custom css styling -->
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+
+        <!-- Nav bar -->
+        <ul class="nav">
+            <!-- logo container -->
+            <p style="margin-left: -10px;" id="logoContainer">
+                <img src="flash-32.png" style="width: 25px; position: absolute;" alt="logo">
+                <a id="logo" href="index.html">EV Charging Calculator</a>
+            </p>
+            <!-- link to other pages -->
+            <li>
+                <a href="calc.html">Calculator</a>
+            </li>
+            <li>
+                <a href="tips.html">EV Charging Tips</a>
+            </li>
+            <li>
+                <a href="save.html">Saving The Planet</a>
+            </li>
+        </ul>
+        
+        <!-- main div to hold the main components -->
+        <div class="mainDiv">
+            <h1 class="textifyTtl">Charging Calculator</h1>
+            <div id="form">
+                <!-- car charging speed input-->
+                <div class="inputContainer">
+                    <p>Car charging speed</p>
+                    <input type="number" id="car-speed" value="">kW
+                </div>
+        
+                <!-- car battery size input -->
+                <div class="inputContainer">
+                    <p>Car battery size</p>
+                    <input type="number" id="battery-size" value="">kWh
+                </div>
+        
+                <!-- charger speed input -->
+                <div class="inputContainer">
+                    <p>Charger speed</p>
+                    <input type="number" id="charger-speed" value="">kW
+                </div>
+                    
+                <!-- amount of charge input -->
+                <div class="inputContainer" id="charge-amount">
+                    <p>Amount to charge</p>
+                    From <input type="number" id="starting-charge" value="">% to <input type="number" id="ending-charge" value="">%
+                </div>
+        
+                <!-- efficiency input -->
+                <div class="inputContainer optional">
+                    <p>Efficiency</p>
+                    <input type="number" id="effi" value="95">%
+                </div>
+        
+                <!-- cost input -->
+                <div class="inputContainer optional">
+                    <p>Cost</p>
+                    <input type="number" id="cost" value="0.25">kWh
+                </div>
+            </div>
+
+            <!-- calculate button -->
+            <button class="mainBtn" id="calculate">
+                <span>Calculate!</span>
+            </button>
+            
+            <!-- reset button -->
+            <button id="reset">
+                <span>Reset</span>
+            </button>
+        
+            <!-- output container -->
+            <div id="outputContainer" style="font-size: 0;">
+                <!-- output container so i can use flexbox for responsive sizing -->
+                <div class="output">
+                    <!-- displaying the charging time to the user -->
+                    <h2 class="outputTtl">Charging time:</h2>
+                    <h4 id="charging-time"></h4>
+                </div>
+                
+                <div class="output">
+                    <!-- displaying the charging cost to the user -->
+                    <h2 class="outputTtl">Charging cost:</h2>
+                    <h4 id="charging-cost"></h4>
+                </div>
+            </div>
+        </div>
+        
+        <!-- scripts -->
+        <!-- GSAP script for image animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- FontFaceObserver script for animation for title -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.3.0/fontfaceobserver.standalone.js"
+        integrity="sha512-AtGkQVw5dVZR8URiScMJF/O46VB5I4JRo+wsLSwCKvtnlCwlWV/59excjg1+hFmuXuQhwYvoADflVbN4fMAKNg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Textify script for title animation -->
+        <script src="https://cdn.jsdelivr.net/npm/textify.js@3.0.1/dist/Textify.min.js"></script>
+        <!-- My calculating script -->
+        <script src="calc.js"></script>
+        <!-- My Textify script for animation-->
+        <script src="textify.js"></script>
+    </body>
+</html>
+<!-- FAVICON IMAGE: <a href="https://www.flaticon.com/free-icons/thunder" title="thunder icons">Thunder icons created by Smashicons - Flaticon</a> -->

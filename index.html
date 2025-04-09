@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- google fonts api -->
+        <link href="https://fonts.googleapis.com/css?family=Mandali|Ubuntu|Alata" rel="stylesheet">
+        <!-- page title -->
+        <title>EV Charging Calculator</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="flash-16.png">
+        <!-- my custom css styling -->
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <ul class="nav">
+            <!-- logo container -->
+            <p style="margin-left: -10px;" id="logoContainer">
+                <img src="flash-32.png" style="width: 25px; position: absolute;" alt="logo">
+                <a id="logo" href="index.html">EV Charging Calculator</a>
+            </p>
+            <!-- page links -->
+            <li>
+                <a href="calc.html">Calculator</a>
+            </li>
+            <li>
+                <a href="tips.html">EV Charging Tips</a>
+            </li>
+            <li>
+                <a href="save.html">Saving The Planet</a>
+            </li>
+        </ul>
+
+        <!-- Header div  -->
+        <div class="mainDiv">
+            <!-- title with animation -->
+            <h1 class="textifyTtl">EV Charging Calculator</h1>
+            <!-- intro to the calculator -->
+            <p>Use this <a style="color: var(--colour2);" href="calc.html">calculator</a> to estimate how long you need to charge for, and the estimated cost of doing so</p>
+            <!-- button linked to calculator page -->
+            <div class="btnContainer">
+                <a href="calc.html">
+                    <button class="mainBtn">
+                        <span>Calculate!</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main image with parallax design -->
+        <div class="para" id="mainHomeImg"></div>
+        
+        <!-- sub div -->
+        <div class="mainDiv">
+            <!-- title with animation -->
+            <h1 class="textifyTtl">EV tips about charging</h1>
+            <!-- intro to the ev tips page -->
+            <p>Charging your EV efficiently is important to not damage your car battery</p>
+            <!-- button linked to EV charging tips page -->
+            <div class="btnContainer">
+                <a href="tips.html">
+                    <button class="mainBtn">
+                        <span>Charging Tips!</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sub image with parallax design -->
+        <div class="para" id="subHomeImg"></div>
+        
+        <!-- sub div -->
+        <div class="mainDiv">
+            <!-- title with animation -->
+            <h1 class="textifyTtl">How EV's are saving the planet</h1>
+            <!-- intro to the saving the planet page -->
+            <p>EVs are crucial to help making a sustainable and healthy world as they drastically reduce greenhouse gas emissions</p>
+            <!-- button linked to saving the planet page -->
+            <div class="btnContainer">
+                <a href="save.html">
+                    <button class="mainBtn">
+                        <span>Saving the planet!</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer (only on the main page) -->
+        <ul class="nav">
+            <!-- logo container -->
+            <p style="margin-left: -10px;" id="logoContainer">
+                <img src="flash-32.png" style="width: 25px; position: absolute;" alt="logo">
+                <a id="logo" href="index.html">EV Charging Calculator</a>
+            </p>
+            <!-- links to the pages -->
+            <li>
+                <a href="calc.html">Calculator</a>
+            </li>
+            <li>
+                <a href="tips.html">EV Charging Tips</a>
+            </li>
+            <li>
+                <a href="save.html">Saving The Planet</a>
+            </li>
+        </ul>
+
+        <!-- scripts -->
+        <!-- GSAP script for animation-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- FontFaceObserver script for title animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.3.0/fontfaceobserver.standalone.js"
+        integrity="sha512-AtGkQVw5dVZR8URiScMJF/O46VB5I4JRo+wsLSwCKvtnlCwlWV/59excjg1+hFmuXuQhwYvoADflVbN4fMAKNg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Textify script for animation -->
+        <script src="https://cdn.jsdelivr.net/npm/textify.js@3.0.1/dist/Textify.min.js"></script>
+        <!-- Ny textify.js script for animation -->
+        <script src="textify.js"></script>
+    </body>
+</html>
+
+<!-- FAVICON IMAGE: <a href="https://www.flaticon.com/free-icons/thunder" title="thunder icons">Thunder icons created by Smashicons - Flaticon</a> -->

@@ -1,0 +1,400 @@
+/* Main */
+:root {
+  /* variables */
+  --colour1: #E3F0AF;
+  --colour2: #5DB996;
+  --colour3: #fff;
+  --colour4: #118B50;
+}
+html {
+  font-family: 'Alata';
+  overflow-x: hidden;
+  cursor: url("cursor.png"), auto !important;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+br {
+  height: 2px;
+}
+
+/* TEXT */
+h1 {
+  font-family: 'Mandali';
+}
+h2 {
+  font-family: 'Mandali';
+}
+a {
+  text-decoration: none;
+  color: var(--colour4);
+}
+ul {
+  list-style-type: square;
+}
+/* list bullet point colour */
+li::marker {
+  color: var(--colour4);
+}
+/* This is changing the colour when the user selects some text */
+::selection {
+  color: white;
+  background: var(--colour2);
+}
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: var(--colour2);
+}
+
+/* MAIN COMPONENTS */
+/* this is the container div for all pages so the padding is consistent */
+.mainDiv {
+  padding: 50px 60px;
+}
+.textifyTtl {
+  margin: 0 !important;
+}
+
+/* NAVBAR */
+/* container for logo */
+#logoContainer {
+  margin: 10px;
+  float: left;
+}
+
+/* text styling for the logo/main page name */
+#logo {
+  display: block;
+  color: var(--colour4);
+  border-radius: 5px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.nav {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav > li {
+  margin: 10px;
+  float: right;
+}
+.nav > li > a {
+  font-family: 'Ubuntu';
+  color: var(--colour4);
+  border-radius: 5px;
+  text-align: center;
+  margin: 0px 20px;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  line-height: 42px;
+  border: none;
+}
+
+.nav > li > a:hover {
+  color: var(--colour4);
+  background: transparent;
+  box-shadow: none;
+}
+.nav > li > a:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: var(--colour2);
+  transition: 400ms ease all;
+}
+.nav > li > a:after{
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+.nav > li > a:hover:after{
+  width: 100%;
+  transition: 600ms ease all;
+}
+
+/* MAIN BUTTON DESIGN; original from CodePen - Candy Color Button Animation - Yuhomyan */
+/* button styling */
+.mainBtn {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  background-image: linear-gradient(330deg, var(--colour4) 0%, var(--colour2) 74%);
+  line-height: 52px;
+  padding: 0;
+  border: none;
+}
+/* button text styling */
+.mainBtn span {
+  color: var(--colour3);
+  font-family: 'Alata';
+  font-size: 2.5vh;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* creating the transition for the bottom and right side line design */
+.mainBtn:before, .mainBtn:after {
+  position: absolute;
+  content: ""; /* this is necessary for transitions */
+  right: 0;
+  bottom: 0;
+  background: var(--colour2);
+  transition: all 0.3s ease;
+}
+/* editing the width & height during the transitions, as well as before and after  */
+.mainBtn:before {
+  height: 0%;
+  width: 2px;
+}
+.mainBtn:after {
+  width: 0%;
+  height: 2px;
+}
+.mainBtn:hover:before {
+  height: 100%;
+}
+.mainBtn:hover:after {
+  width: 100%;
+}
+.mainBtn:hover {
+  background: transparent;
+}
+/* creating the transition for the top and left side line design */
+.mainBtn span:before, .mainBtn span:after {
+  position: absolute;
+  content: ""; 
+  left: 0;
+  top: 0;
+  background: var(--colour2);
+  transition: all 0.3s ease;
+}
+/* Changing the text style during and after the transition */
+.mainBtn span:hover{
+  color: var(--colour4);
+}
+.mainBtn span:before {
+  width: 2px;
+  height: 0%;
+}
+.mainBtn span:after {
+  height: 2px;
+  width: 0%;
+}
+.mainBtn span:hover:before {
+  height: 100%;
+}
+.mainBtn span:hover:after {
+  width: 100%;
+}
+
+/* PARALLAX */
+.para {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* MAIN PAGE  */
+/* divs */
+/* Heading div, sub div and last div on the main page styling */
+
+/* images */
+#mainHomeImg, #subHomeImg {
+  height: 70vh;
+}
+#mainHomeImg {
+  background-image: url("car2.jpg");
+}
+#subHomeImg {
+  background-image: url("saving-planet.jpg");
+}
+
+/* CALCULATIONS PAGE */
+/* headings styling */
+.outputTtl {
+  margin: 1rem 2.5rem 0;
+  text-decoration: underline;
+  text-decoration-color: var(--colour2);
+}
+#charging-time, #charging-cost {
+  margin: 0rem 2.5rem;
+}
+/* Calculation inputs */
+/* creating the container for the inputs and making it responsive to different screen sizes by using display:flex and using flex properties */
+#form {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: flex-start;
+  width: 90%;
+  margin-bottom: 30px;
+}
+/* styling for the container that the input is in */
+.inputContainer {
+  margin: 2.5% 3% 0.5%;
+  flex-grow: 1;
+  min-width: 200px; 
+  max-width: 40%;
+}
+/* the styling for the individual inputs, and controlling that they don't get too small or big, depending on the screen size */
+input {
+  min-width: 50%; 
+  max-width: 70%;
+  margin: 0 5px 10px 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 2px solid var(--colour2);
+  appearance: none;
+  -webkit-appearance:none;
+  -moz-appearance:textfield;
+}
+input:focus {
+  border: 2px solid var(--colour4) !important;
+  background-color: #E3F0AF;
+  outline: none;
+}
+/* changing the opacity for the optional inputs */
+.optional {
+  opacity: 50%;
+}
+.optional:has(input:focus) {
+  opacity: 100%;
+}
+
+/* this input container is unique, as it needs to be larger as it has two inputs in it */
+#charge-amount {
+  max-width: 30%;
+  flex-grow: 2; 
+}
+/* this is the button to calculate (uses styling from the main button as well */
+#calculate {
+  width: 30%;
+  min-width: 120px;
+  max-width: 250px;
+  margin: 10px 20px;
+}
+/* Reset button styling */
+#reset {
+  width: 8%;
+  border: none;
+  outline: none;
+  color: var(--colour4);
+  background-color: transparent;
+  font-family: 'Alata';
+  font-size: 2vh;
+  border: 2px var(--colour1) solid;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  line-height: 1;
+  transition: 0.5s;
+}
+/* reset button hover and focus styling */
+#reset:hover,
+#reset:focus {
+  border-color: var(--colour4);
+  color: #fff;
+  box-shadow: inset 0 -3.25em 0 0 var(--colour2);
+}
+#reset:active {
+  box-shadow: inset 0 -3.25em 0 0 var(--colour4);
+  color: var(--colour4);
+}
+#outputContainer {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: flex-start;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.output {
+  margin: 1.2% 3% 0.5%;
+  flex-grow: 1;
+  min-width: 235px; 
+  max-width: 50%;
+}
+/* changing the margin size for phones */
+@media only screen and (max-width: 505px) {
+  #outputContainer {
+    margin: 10px;
+  }
+}
+
+/* EV CHARGING TIPS PAGE */
+#tipsMainContainer {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: flex-start;
+  width: 90%;
+  margin-bottom: 30px;
+}
+#tipsTextContainer {
+  margin: 10px;
+  flex-grow: 1;
+  min-width: 200px; 
+  max-width: 55%;
+}
+#tipsImgContainer {
+  margin: 20px;
+  min-width: 380px; 
+  flex-grow: 1;
+  height: 60vh;
+  background-image: url("car3.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+/* EV SAVING PLANET PAGE */
+#saveMainContainer {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: flex-start;
+  width: 90%;
+  margin-bottom: 30px;
+}
+#saveTextContainer {
+  margin: 10px;
+  flex-grow: 1;
+  min-width: 200px; 
+  max-width: 55%;
+}
+#saveImgContainer {
+  margin: 20px;
+  min-width: 380px; 
+  flex-grow: 1;
+  height: 60vh;
+  background-image: url("saving-planet2.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+/* animation.css library */
+.animate__fadeIn {
+  animation-duration: 2s;
+}
+
