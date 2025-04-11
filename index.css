@@ -9,7 +9,7 @@
 html {
   font-family: 'Alata';
   overflow-x: hidden;
-  cursor: url("cursor.png"), auto !important;
+  cursor: url("imgs/cursor.png"), auto !important;
 }
 body {
   margin: 0;
@@ -217,17 +217,15 @@ li::marker {
 
 /* MAIN PAGE  */
 /* divs */
-/* Heading div, sub div and last div on the main page styling */
-
 /* images */
 #mainHomeImg, #subHomeImg {
   height: 70vh;
 }
 #mainHomeImg {
-  background-image: url("car2.jpg");
+  background-image: url("imgs/car2.jpg");
 }
 #subHomeImg {
-  background-image: url("saving-planet.jpg");
+  background-image: url("imgs/saving-planet.jpg");
 }
 
 /* CALCULATIONS PAGE */
@@ -362,7 +360,7 @@ input:focus {
   min-width: 380px; 
   flex-grow: 1;
   height: 60vh;
-  background-image: url("car3.jpg");
+  background-image: url("imgs/car3.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 5px;
@@ -388,7 +386,7 @@ input:focus {
   min-width: 380px; 
   flex-grow: 1;
   height: 60vh;
-  background-image: url("saving-planet2.jpg");
+  background-image: url("imgs/saving-planet2.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 5px;

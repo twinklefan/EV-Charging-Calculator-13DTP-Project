@@ -1,5 +1,3 @@
-
-
 // Wait for DOM to fully load as otherwise errors will appear
 document.addEventListener('DOMContentLoaded', () => {
     // For the Calculations page
