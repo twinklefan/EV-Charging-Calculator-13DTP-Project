@@ -69,6 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     // adding to the message the inputs that have this error
                     message += '\nInvalid (must be positive): ' + uniqueErrorMessageNeg.join(', ') + '. ';
                 }
+                // checking if the percentage is over 100%
+                if (inputs[4].value > 100 || inputs[5].value > 100) {
+                    message += '\nInvalid percentage, must be below 100%'
+                }
 
                 // alerting the user of these errors
                 alert(message);
