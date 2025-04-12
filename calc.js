@@ -1,6 +1,30 @@
 // Wait for DOM to fully load as otherwise errors will appear
 document.addEventListener('DOMContentLoaded', () => {
     // For the Calculations page
+    // getting the saved preferences for the user if exists 
+    if (localStorage.getItem('carSpeed')) {
+        // setting the input box value to the saved input
+        document.querySelector('#car-speed').value = localStorage.getItem('carSpeed');
+    }
+    // repeat this for the other inputs
+    if (localStorage.getItem('carBattery')) {
+        document.querySelector('#battery-size').value = localStorage.getItem('carBattery');
+    }
+    if (localStorage.getItem('chargerSpeed')) {
+        document.querySelector('#charger-speed').value = localStorage.getItem('chargerSpeed');
+    }
+    if (localStorage.getItem('startingCharge')) {
+        document.querySelector('#starting-charge').value = localStorage.getItem('startingCharge');
+    }
+    if (localStorage.getItem('endingCharge')) {
+        document.querySelector('#ending-charge').value = localStorage.getItem('endingCharge');
+    }
+    if (localStorage.getItem('effi')) {
+        document.querySelector('#effi').value = localStorage.getItem('effi');
+    }
+    if (localStorage.getItem('cost')) {
+        document.querySelector('#cost').value = localStorage.getItem('cost');
+    }
     // getting the button to calculate
     const calculate = document.querySelector('#calculate');
     // Only run calculate if the calc button exists
@@ -83,14 +107,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (errors === 0) {
                 // getting the variable values using parseFloat, which takes the input of a string and tries to convert it to a decimal/number, if it is unable to convert it into a number it gives NaN. It shouldn't give NaN as I have already tested the inputs in the code above, but this is just a precaution
                 let carSpeed = parseFloat(inputs[0].value);
-                let carBattery = parseFloat(inputs[1].value);
+                let carBattery = parseFloat(inputs[1].value);                
                 let chargerSpeed = parseFloat(inputs[2].value);
                 let startingCharge = parseFloat(inputs[3].value);
                 let endingCharge = parseFloat(inputs[4].value);
-                let amountToCharge = (endingCharge-startingCharge)/100
-                let effiDeci = parseFloat(inputs[5].value) / 100;
+                let effi = parseFloat(inputs[5].value);
+                let effiDeci = effi / 100;
                 let cost = parseFloat(inputs[6].value);
+
+                // saving the users last entry to the local storage for input suggestion
+                localStorage.setItem('carSpeed', carSpeed);
+                localStorage.setItem('carBattery', carBattery);
+                localStorage.setItem('chargerSpeed', chargerSpeed);
+                localStorage.setItem('startingCharge', startingCharge);
+                localStorage.setItem('endingCharge', endingCharge);
+                localStorage.setItem('effi', effi);
+                localStorage.setItem('cost', cost);
                 
+                // getting the amount to charge value
+                let amountToCharge = (endingCharge-startingCharge)/100
                 // getting the minimum value from charger speed or car speed
                 let speed = Math.min(carSpeed, chargerSpeed);
                 // calculating charging time
@@ -111,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#charging-cost').innerHTML = '$' + Math.round(chargingCost*100)/100
                 // changing font size
                 document.getElementById('outputContainer').style.fontSize = '2vh'
+
+
             }
         });
     } else {
