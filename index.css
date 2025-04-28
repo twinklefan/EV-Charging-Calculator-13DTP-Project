@@ -295,6 +295,8 @@ input:focus {
 /* Reset button styling */
 #reset {
   width: 8%;
+  min-width: 74px;
+  margin: 10px 20px;
   border: none;
   outline: none;
   color: var(--colour4);
