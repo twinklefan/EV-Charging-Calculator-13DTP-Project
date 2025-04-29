@@ -98,7 +98,6 @@ li::marker {
   line-height: 42px;
   border: none;
 }
-
 .nav > li > a:hover {
   color: var(--colour4);
   background: transparent;
@@ -124,6 +123,42 @@ li::marker {
   width: 100%;
   transition: 600ms ease all;
 }
+.icon {
+  display: none;
+}
+.fa {
+  position: relative;
+  top: 20px;
+  right: 10px;
+  width: 30px;
+}
+@media screen and (max-width: 800px) {
+  .nav > li {
+  	display: none;
+  }
+  .nav > a.icon {
+    float: right;
+    display: block;
+  }
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive > .icon {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  }
+  .nav.responsive > li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/* @media screen and (min-width: 800px) {
+  #logoContainer {
+    display: inline;
+  }
+} */
 
 /* MAIN BUTTON DESIGN; original from CodePen - Candy Color Button Animation - Yuhomyan */
 /* button styling */
@@ -213,6 +248,14 @@ li::marker {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media screen and (max-width: 800px) {
+  .para {
+    background-attachment: scroll;
+    background-size:contain;
+    /* height: 300px; */
+    width: 100%;
+  }
 }
 
 /* MAIN PAGE  */
