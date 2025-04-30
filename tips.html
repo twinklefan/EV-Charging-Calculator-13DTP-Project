@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Mandali|Ubuntu|Alata" rel="stylesheet">
+        <!-- font awesome icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Animate.css for animations -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <!-- page title -->
@@ -16,13 +18,13 @@
     </head>
     <body>
         <!-- Nav bar -->
-        <ul class="nav">
+        <ul class="nav" id="mynav">
             <!-- logo container -->
             <p style="margin-left: -10px;" id="logoContainer">
                 <img src="imgs/flash-32.png" style="width: 25px; position: absolute;" alt="logo">
                 <a id="logo" href="index.html">EV Charging Calculator</a>
             </p>
-            <!-- nav bar links to other pages -->
+            <!-- link to other pages -->
             <li>
                 <a href="calc.html">Calculator</a>
             </li>
@@ -32,6 +34,9 @@
             <li>
                 <a href="save.html">Saving The Planet</a>
             </li>
+            <a href="javascript:void(0);" class="icon" onclick="mobile()">
+                <i class="fa fa-bars"></i>
+            </a>
         </ul>
 
         <!-- main content container -->
@@ -63,6 +68,19 @@
         </div>
 
         <!-- scripts -->
+         <!-- script for mobile responsive navbar-->
+        <script>
+            function mobile() {
+              var x = document.getElementById("mynav");
+              if (x.className === "nav") {
+                x.className += " responsive";
+                document.getElementById('logoContainer').style.display = 'none'
+            } else {
+                x.className = "nav";
+                document.getElementById('logoContainer').style.display = 'inline'
+              }
+            }
+        </script>
         <!-- GSAP script for smaller animation (eg. images) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- FontFaceObserver script for font loading for the title animation -->

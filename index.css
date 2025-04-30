@@ -14,6 +14,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 br {
   height: 2px;
@@ -132,33 +133,7 @@ li::marker {
   right: 10px;
   width: 30px;
 }
-@media screen and (max-width: 800px) {
-  .nav > li {
-  	display: none;
-  }
-  .nav > a.icon {
-    float: right;
-    display: block;
-  }
-  .nav.responsive {
-    position: relative;
-  }
-  .nav.responsive > .icon {
-    position: absolute;
-    right: 0;
-    top: 50px;
-  }
-  .nav.responsive > li {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-/* @media screen and (min-width: 800px) {
-  #logoContainer {
-    display: inline;
-  }
-} */
+
 
 /* MAIN BUTTON DESIGN; original from CodePen - Candy Color Button Animation - Yuhomyan */
 /* button styling */
@@ -249,14 +224,7 @@ li::marker {
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media screen and (max-width: 800px) {
-  .para {
-    background-attachment: scroll;
-    background-size:contain;
-    /* height: 300px; */
-    width: 100%;
-  }
-}
+
 
 /* MAIN PAGE  */
 /* divs */
@@ -378,12 +346,6 @@ input:focus {
   min-width: 235px; 
   max-width: 50%;
 }
-/* changing the margin size for phones */
-@media only screen and (max-width: 505px) {
-  #outputContainer {
-    margin: 10px;
-  }
-}
 
 /* EV CHARGING TIPS PAGE */
 #tipsMainContainer {
@@ -441,3 +403,52 @@ input:focus {
   animation-duration: 2s;
 }
 
+
+/* media queries for mobile responsiveness  */
+@media screen and (max-width: 500px) {
+  /* since this is a landscape image, it doesn't appear very well in mobile view so it will disappear in mobile view and will only be the text */
+  #tipsImgContainer, #saveImgContainer {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* calculations page */
+  #outputContainer {
+    margin: 10px;
+  }
+  /* removing the parallax image affect on the main page */
+  .para {
+    background-attachment: scroll;
+    background-size:contain;
+    width: 100%;
+  }
+  /* navigation bar */
+  .nav > li {
+  	display: none;
+  }
+  .nav > a.icon {
+    float: right;
+    display: block;
+  }
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive > .icon {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  }
+  .nav.responsive > li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+}
+@media screen and (max-width: 1210px) {
+  /* flexibox components */
+  #tipsTextContainer, #saveTextContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+}

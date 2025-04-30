@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-
         <!-- Nav bar -->
         <ul class="nav" id="mynav">
             <!-- logo container -->
@@ -33,7 +32,7 @@
             <li>
                 <a href="save.html">Saving The Planet</a>
             </li>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <a href="javascript:void(0);" class="icon" onclick="mobile()">
                 <i class="fa fa-bars"></i>
             </a>
         </ul>
@@ -107,8 +106,9 @@
         </div>
         
         <!-- scripts -->
+        <!-- script for mobile responsive navbar-->
         <script>
-            function myFunction() {
+            function mobile() {
               var x = document.getElementById("mynav");
               if (x.className === "nav") {
                 x.className += " responsive";
