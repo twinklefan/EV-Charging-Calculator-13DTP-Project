@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- urls -->
+<url>
+  <!-- main website link -->
+  <loc>https://twinklefan.github.io/13DTP-website/</loc>
+  <lastmod>2025-05-05T23:42:59+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+<!-- main website link -->
+  <loc>https://twinklefan.github.io/13DTP-website/index.html</loc>
+  <lastmod>2025-05-05T23:42:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+<!-- calculations page link -->
+  <loc>https://twinklefan.github.io/13DTP-website/calc.html</loc>
+  <lastmod>2025-05-05T23:42:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+<!-- tips page link -->
+  <loc>https://twinklefan.github.io/13DTP-website/tips.html</loc>
+  <lastmod>2025-05-05T23:42:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+<!-- save page link -->
+  <loc>https://twinklefan.github.io/13DTP-website/save.html</loc>
+  <lastmod>2025-05-05T23:42:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+</urlset>
