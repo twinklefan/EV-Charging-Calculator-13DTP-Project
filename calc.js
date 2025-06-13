@@ -1,6 +1,16 @@
 // Wait for DOM to fully load as otherwise errors will appear
 document.addEventListener('DOMContentLoaded', () => {
     // For the Calculations page
+     // getting the inputs
+            let inputs = [
+                document.getElementById('car-speed'), // 0
+                document.getElementById('battery-size'), // 1
+                document.getElementById('charger-speed'), // 2
+                document.getElementById('starting-charge'), // 3
+                document.getElementById('ending-charge'), // 4
+                document.getElementById('effi'), // 5
+                document.getElementById('cost') // 6
+            ];
     // getting the saved preferences for the user if exists 
     if (localStorage.getItem('carSpeed')) {
         // setting the input box value to the saved input
@@ -25,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('cost')) {
         document.querySelector('#cost').value = localStorage.getItem('cost');
     }
-    // getting the button to calculate
+    // getting the button for calculate
     const calculate = document.querySelector('#calculate');
-    // Only run calculate if the calc button exists
+    // Only run calculate function  if the calc button exists
     if (calculate) {
         // checking if the button is clicked
         calculate.addEventListener('click', () => {
@@ -37,16 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let errorMessageBlank = []
             let errorMessageLetter = []
             let errorMessageNeg = []
-            // getting the inputs
-            let inputs = [
-                document.getElementById('car-speed'), // 0
-                document.getElementById('battery-size'), // 1
-                document.getElementById('charger-speed'), // 2
-                document.getElementById('starting-charge'), // 3
-                document.getElementById('ending-charge'), // 4
-                document.getElementById('effi'), // 5
-                document.getElementById('cost') // 6
-            ];
+           
             // checking each input for errors
             for (let i = 0; i < inputs.length; i++) {
                 // getting the value of the input that is getting checked in the loop
@@ -58,50 +59,111 @@ document.addEventListener('DOMContentLoaded', () => {
                     // adding to count if there is an error
                     errors++
                     // creating the message to show in the alert
-                    errorMessageBlank.push(label)
+                    errorMessageBlank.push(" " + label)
                 } else if (isNaN(value)) {
                     // adding to count if there is an error
                     errors++
                     // creating the message to show in the alert
-                    errorMessageLetter.push(label)                    
+                    errorMessageLetter.push(" " + label)                    
                 } else if (value < 0) {
                     errors++
-                    errorMessageNeg.push(label)
+                    errorMessageNeg.push(" " + label)
                 }
             }
-
-            // creating the alert message if there are errors in the inputs
+            
+            // Going through all the errors and creating error messages
             if (errors > 0) {
                 let message = ''
                 // checking if there are any errors in the input where the input is blank
                 if (errorMessageBlank.length > 0) {
-                    // removing duplicates
-                    let uniqueErrorMessageBlank = [...new Set(errorMessageBlank)]
-                    // adding to the message the inputs that have this error
-                    message += 'Missing: ' + uniqueErrorMessageBlank.join(', ') + '. ';
+                    // making a toast notification
+                    Toastify({
+                        // getting the input that are blank
+                        text: [...new Set(errorMessageBlank)] + ' input is empty',
+                        duration: -1,
+                        close: true,
+                        gravity: "bottom", // `top` or `bottom`
+                        position: "left", // `left`, `center` or `right`
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        className: "message", // extra css styling in the index.css
+                        style: {
+                            background: "linear-gradient(red)", // background colour
+                        },
+                        onClick: function(){} // Callback after click
+                    }).showToast(); // displaying the text
                 }
                 // checking if there are any errors in the input where there are letters in the input
                 if (errorMessageLetter.length > 0) {
-                    // removing duplicates
-                    let uniqueErrorMessageLetter = [...new Set(errorMessageLetter)]
-                    // adding to the message the inputs that have this error
-                    message += '\nInvalid (must be a number): ' + uniqueErrorMessageLetter.join(', ') + '.';
+                    // making a toast notification
+                    Toastify({
+                        // getting the input that have characters that arent a number
+                        text: [...new Set(errorMessageLetter)] + ' inputs are invalid, it must be a number',
+                        duration: -1,
+                        close: true,
+                        gravity: "bottom", // `top` or `bottom`
+                        position: "left", // `left`, `center` or `right`
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        className: "message", // extra css styling in the index.css
+                        style: {
+                            background: "linear-gradient(red)", // background colour
+                        },
+                        onClick: function(){} // Callback after click
+                    }).showToast(); // displaying the text
                 }
                 // checking if there are any negative numbers
                 if (errorMessageNeg.length > 0) {
-                    let uniqueErrorMessageNeg = [...new Set(errorMessageNeg)]
-                    // adding to the message the inputs that have this error
-                    message += '\nInvalid (must be positive): ' + uniqueErrorMessageNeg.join(', ') + '. ';
+                    // making a toast notification
+                    Toastify({
+                        // getting the input that are negative
+                        text: [...new Set(errorMessageNeg)] + ' input must be positive',
+                        duration: -1,
+                        close: true,
+                        gravity: "bottom", // `top` or `bottom`
+                        position: "left", // `left`, `center` or `right`
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        className: "message", // extra css styling in the index.css
+                        style: {
+                            background: "linear-gradient(red)", // background colour
+                        },
+                        onClick: function(){} // Callback after click
+                    }).showToast(); // displaying the text
                 }
                 // checking if the percentage is over 100%
                 if (inputs[4].value > 100 || inputs[5].value > 100) {
-                    message += '\nInvalid percentage, must be below 100%'
+                    // making a toast notification
+                    Toastify({
+                        // getting the input that are blank
+                        text: 'Invalid percentage, must be below 100%',
+                        duration: -1,
+                        close: true,
+                        gravity: "bottom", // `top` or `bottom`
+                        position: "left", // `left`, `center` or `right`
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        className: "message", // extra css styling in the index.css
+                        style: {
+                            background: "linear-gradient(red)", // background colour
+                        },
+                        onClick: function(){} // Callback after click
+                    }).showToast(); // displaying the text
                 }
-
-                // alerting the user of these errors
-                alert(message);
-                // console logging it for easier testing and debugging
-                console.log(message);
+                // Checking if the final charge percentage is larger than the initial charge
+                if (inputs[3].value > inputs[4].value) {
+                    // making a toast notification
+                    Toastify({
+                        // getting the input that are blank
+                        text: "You can't have a starting charge larger than the final charge",
+                        duration: -1,
+                        close: true,
+                        gravity: "bottom", // `top` or `bottom`
+                        position: "left", // `left`, `center` or `right`
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        className: "message", // extra css styling in the index.css
+                        style: {
+                            background: "linear-gradient(red)", // background colour
+                        },
+                        onClick: function(){} // Callback after click
+                    }).showToast(); // displaying the text
+                }
             }
             // calculating output if there are no errors in the input
             if (errors === 0) {
@@ -114,15 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let effi = parseFloat(inputs[5].value);
                 let effiDeci = effi / 100;
                 let cost = parseFloat(inputs[6].value);
-
-                // saving the users last entry to the local storage for input suggestion
-                localStorage.setItem('carSpeed', carSpeed);
-                localStorage.setItem('carBattery', carBattery);
-                localStorage.setItem('chargerSpeed', chargerSpeed);
-                localStorage.setItem('startingCharge', startingCharge);
-                localStorage.setItem('endingCharge', endingCharge);
-                localStorage.setItem('effi', effi);
-                localStorage.setItem('cost', cost);
                 
                 // getting the amount to charge value
                 let amountToCharge = (endingCharge-startingCharge)/100
@@ -146,8 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#charging-cost').innerHTML = '$' + Math.round(chargingCost*100)/100
                 // changing font size
                 document.getElementById('outputContainer').style.fontSize = '2vh'
-
-
             }
         });
     } else {
@@ -166,4 +217,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // removing the output from being displayed
         document.getElementById('outputContainer').style.fontSize = '0'
     });
+
+    // when the save button is clicked, save the input data to the local storage
+    document.querySelector('#save').addEventListener('click', () => {
+        // saving the users last entry to the local storage for input suggestion
+        localStorage.setItem('carSpeed', inputs[0].value);
+        localStorage.setItem('carBattery', inputs[1].value);
+        localStorage.setItem('chargerSpeed', inputs[2].value);
+        localStorage.setItem('startingCharge', inputs[3].value);
+        localStorage.setItem('endingCharge', inputs[4].value);
+        localStorage.setItem('effi', inputs[5].value);
+        localStorage.setItem('cost', inputs[6].value);
+        // making a toast notification
+        Toastify({
+            // getting the input that are blank
+            text: 'Saved',
+            duration: 2500,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            className: "message", // extra css styling in the index.css
+            style: {
+                background: "linear-gradient(330deg, var(--colour4) 0%, var(--colour2) 74%)", // background colour
+            },
+            onClick: function(){} // Callback after click
+        }).showToast(); // displaying the text
+    })
 });
