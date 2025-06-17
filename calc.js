@@ -70,10 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     errorMessageNeg.push(" " + label)
                 }
             }
-            
+            if (inputs[3].value > inputs[4].value) {
+                errors++
+            }
             // Going through all the errors and creating error messages
             if (errors > 0) {
-                let message = ''
                 // checking if there are any errors in the input where the input is blank
                 if (errorMessageBlank.length > 0) {
                     // making a toast notification
@@ -146,8 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         onClick: function(){} // Callback after click
                     }).showToast(); // displaying the text
                 }
+                console.log('hi')
                 // Checking if the final charge percentage is larger than the initial charge
                 if (inputs[3].value > inputs[4].value) {
+                    console.log('error')
                     // making a toast notification
                     Toastify({
                         // getting the input that are blank
